@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <style>
+      .demo {
+        color: red;
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="demo">
+      <h1>form</h1>
+      <from class="container">
+        <input type="text" id="username" placeholder="username" />
+        <label class="heading" for="username">Username</label>
+        <button id="submitButton">Submit</button>
+      </from>
+    </div>
+
+    <script>
+      let nameValue = document.getElementById("username");
+
+      submitButton.addEventListener("click", () => {
+        let obj = {
+          name: nameValue.value,
+        };
+        let options = {
+          method: "POST",
+          headers: {
+            "Content-type": "application/json",
+          },
+          body: JSON.stringify(obj),
+        };
+        fetch("/form", options);
+      });
+    </script>
+  </body>
+</html>
